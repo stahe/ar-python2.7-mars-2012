@@ -814,10 +814,10 @@
 <p><a id="refheading382922423505"></a>
 <a id="exo-impots-objets"></a></p>
 <h1 id="8">8. <span style="color: #365f91"><strong>تمرين تطبيقي – [حساب الضرائب] باستخدام بنية متعددة الطبقات</strong></span></h1>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000180000002582CAB8AF3.png" width="192" height="300" style="display:inline-block; margin:4px;width:5.08cm;height:7.938cm;" class="odt-zoomable" data-zoom-src="images/1000000000000180000002582CAB8AF3.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000180000002582CAB8AF3.png" width="192" height="300" style="display:inline-block; margin:4px;width:5.08cm;height:7.938cm;" class="odt-zoomable" data-zoom-src="images/1000000000000180000002582CAB8AF3.png" /></td></tr></table>
 
 <p>نعيد هنا النظر في التمرين الموصوف في القسم<a href="#exo-impots"><u><span style="color: #0563c1"> 4.1</span></u></a>. نبدأ بنسخة الملف النصي الموصوفة في القسم<a href="#exo-impots-fichiers"><u><span style="color: #0563c1"> 4.3</span></u></a>. لمعالجة هذا المثال باستخدام الكائنات، سنستخدم بنية ثلاثية المستويات:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000491000000EC26160B42.png" width="585" height="118" style="display:inline-block; margin:4px;width:15.466cm;height:3.122cm;" class="odt-zoomable" data-zoom-src="images/1000000000000491000000EC26160B42.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000491000000EC26160B42.png" width="585" height="118" style="display:inline-block; margin:4px;width:15.466cm;height:3.122cm;" class="odt-zoomable" data-zoom-src="images/1000000000000491000000EC26160B42.png" /></td></tr></table>
 
 <ul>
 <li>تتولى طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>] (كائن الوصول إلى البيانات) الوصول إلى البيانات. في ما يلي، ستوجد هذه البيانات أولاً في ملف نصي، ثم في قاعدة بيانات <bdi dir="ltr" class="odt-ltr-term">MySQL</bdi>؛</li>
@@ -835,7 +835,7 @@
 <h2 id="81-dao">8.1. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]</span></h2>
 <p>سنجمع الفئات المختلفة المطلوبة للتطبيق في ملف <em>واحد، <bdi dir="ltr" class="odt-ltr-term">impots.py</bdi></em>. سيتم بعد ذلك استيراد الكائنات الموجودة في هذا الملف إلى البرامج النصية التي تحتاج إليها.</p>
 <p>نبدأ بالحالة التي تكون فيها البيانات في ملف نصي، كما في المثال الوارد في القسم<a href="#exo-impots-fichiers"><u><span style="color: #0563c1"> 4.3</span></u></a>.</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000498000000E052DB9695.png" width="588" height="112" style="display:inline-block; margin:4px;width:15.558cm;height:2.963cm;" class="odt-zoomable" data-zoom-src="images/1000000000000498000000E052DB9695.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000498000000E052DB9695.png" width="588" height="112" style="display:inline-block; margin:4px;width:15.558cm;height:2.963cm;" class="odt-zoomable" data-zoom-src="images/1000000000000498000000E052DB9695.png" /></td></tr></table>
 
 <p>فيما يلي كود فئة [<a id="impotsfile"></a> <bdi dir="ltr" class="odt-ltr-term">ImpotsFile</bdi>] (<em><bdi dir="ltr" class="odt-ltr-term">impots.py</bdi></em>) التي تنفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">DAO</bdi>]:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -956,7 +956,7 @@
 <a id="refheading93741200241464"></a></li>
 </ul>
 <h2 id="82">8.2. <span style="color: #4f81bd">طبقة [الأعمال]</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000004B4000000D6A4D61673.png" width="602" height="107" style="display:inline-block; margin:4px;width:15.928cm;height:2.831cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B4000000D6A4D61673.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000004B4000000D6A4D61673.png" width="602" height="107" style="display:inline-block; margin:4px;width:15.928cm;height:2.831cm;" class="odt-zoomable" data-zoom-src="images/10000000000004B4000000D6A4D61673.png" /></td></tr></table>
 
 <p>فيما يلي فئة [<a id="impotsmetier"></a> <bdi dir="ltr" class="odt-ltr-term">ImpotsMetier</bdi>] (<em><bdi dir="ltr" class="odt-ltr-term">impots.py</bdi></em>) التي تنفذ طبقة [الأعمال]:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
@@ -1011,7 +1011,7 @@
 <a id="refheading93743200241464"></a></li>
 </ul>
 <h2 id="83-console">8.3. <span style="color: #4f81bd">طبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>]</span></h2>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000000000490000000D60CCF5A6A.png" width="584" height="107" style="display:inline-block; margin:4px;width:15.452cm;height:2.831cm;" class="odt-zoomable" data-zoom-src="images/1000000000000490000000D60CCF5A6A.png" /></td></tr></table>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000490000000D60CCF5A6A.png" width="584" height="107" style="display:inline-block; margin:4px;width:15.452cm;height:2.831cm;" class="odt-zoomable" data-zoom-src="images/1000000000000490000000D60CCF5A6A.png" /></td></tr></table>
 
 <p>البرنامج النصي الذي ينفذ طبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>] (<bdi dir="ltr" class="odt-ltr-term">impots-03</bdi>) هو كما يلي:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
