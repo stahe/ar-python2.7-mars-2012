@@ -1,0 +1,1394 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="مقدمة إلى Python 2.7 من خلال أمثلة">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/ar-python2.7-mars-2012/lhnds-lbqy-wlbrmj-br-lwjht.html">
+      
+      
+        <link rel="prev" href="lstthnt.html">
+      
+      
+        <link rel="next" href="tmryn-tbyqy---impots-m-bny-dht-lbqt.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>7. الهندسة الطبقية والبرمجة عبر الواجهات - مقدمة إلى Python 2.7 من خلال أمثلة</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "مقدمة إلى Python 2.7 من خلال أمثلة";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="مقدمة إلى Python 2.7 من خلال أمثلة" class="md-header__button md-logo" aria-label="مقدمة إلى Python 2.7 من خلال أمثلة" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            مقدمة إلى Python 2.7 من خلال أمثلة
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. الهندسة الطبقية والبرمجة عبر الواجهات
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الداكن"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الداكن" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="التبديل إلى الوضع الفاتح"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="التبديل إلى الوضع الفاتح" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/ar-python2.7-mars-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="مقدمة إلى Python 2.7 من خلال أمثلة" class="md-nav__button md-logo" aria-label="مقدمة إلى Python 2.7 من خلال أمثلة" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    مقدمة إلى Python 2.7 من خلال أمثلة
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/ar-python2.7-mars-2012" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    مرحبًا بكم
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mqdm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. مقدمة
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tthbyt-mtrjm-l-python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. تثبيت مترجم لغة Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lssyt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. الأساسيات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tmryn-tbyqy---impots.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. تمرين تطبيقي – [IMPOTS]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lfyt-wlkynt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. الفئات والكائنات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lstthnt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. الاستثناءات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. الهندسة الطبقية والبرمجة عبر الواجهات
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="lhnds-lbqy-wlbrmj-br-lwjht.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. الهندسة الطبقية والبرمجة عبر الواجهات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. كيانات التطبيق
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-dao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. الطبقة [dao]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-metier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. الطبقة [métier]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5. الطبقة [console]
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tmryn-tbyqy---impots-m-bny-dht-lbqt.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. تمرين تطبيقي - [IMPOTS] مع بنية ذات الطبقات
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="stkhdm-sgbd-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. استخدام SGBD MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tmryn-impots-m-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. تمرين [IMPOTS] مع MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="wyf-lshbk-fy-l-bythwn.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. وظائف الشبكة في لغة بايثون
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="khdmt-lwyb-bl-python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. خدمات الويب بلغة Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tmryn-impots-bstkhdm-khdm-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. تمرين [IMPOTS] باستخدام خدمة WEB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mlj-lmstndt-xml.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. معالجة المستندات XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tmryn-impots-m-xml.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. تمرين [IMPOTS] مع XML
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="refheading408941886864318" name="refheading408941886864318" class="odt-bookmark-anchor"></span></p>
+<h1 id="7">7. <span style="color: #365f91">الهندسة الطبقية والبرمجة عبر الواجهات</span></h1>
+<p><span id="refheading408961886864318" name="refheading408961886864318" class="odt-bookmark-anchor"></span></p>
+<h2 id="71-introduction">7.1. <span style="color: #4f81bd"><bdi dir="ltr" class="odt-ltr-term">Introduction</bdi></span></h2>
+<p>نقترح كتابة تطبيق يسمح بعرض درجات طلاب إحدى المدارس الإعدادية. سيكون لهذا التطبيق بنية متعددة الطبقات:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000569000001177786E7B8.png" width="680" height="137" style="display:inline-block; margin:4px;width:17.997cm;height:3.625cm;" class="odt-zoomable" data-zoom-src="images/1000000000000569000001177786E7B8.png" /></td></tr></table>
+
+<ul>
+<li>الطبقة [<bdi dir="ltr" class="odt-ltr-term">présentation</bdi>] هي الطبقة التي تتفاعل مع مستخدم التطبيق.</li>
+<li>الطبقة [<bdi dir="ltr" class="odt-ltr-term">metier</bdi>] تنفذ قواعد إدارة التطبيق، مثل حساب الراتب أو الفاتورة. تستخدم هذه الطبقة البيانات الواردة من المستخدم عبر الطبقة [<bdi dir="ltr" class="odt-ltr-term">présentation</bdi>] ومن الطبقة <bdi dir="ltr" class="odt-ltr-term">SGBD</bdi> عبر الطبقة [dao].</li>
+<li>تدير الطبقة [dao] (كائنات الوصول إلى البيانات) الوصول إلى بيانات الطبقة <bdi dir="ltr" class="odt-ltr-term">SGBD.</bdi></li>
+</ul>
+<p>سنقوم بتوضيح هذه البنية باستخدام تطبيق بسيط يعمل على وحدة التحكم:</p>
+<ul>
+<li>لن تكون هناك قاعدة بيانات،</li>
+<li>ستدير الطبقة [dao] الكيانات <em><bdi dir="ltr" class="odt-ltr-term">Eleve</bdi> و<bdi dir="ltr" class="odt-ltr-term">Classe</bdi> و<bdi dir="ltr" class="odt-ltr-term">Matiere</bdi> و<bdi dir="ltr" class="odt-ltr-term">Note</bdi>،</em> مما يتيح إدارة درجات الطلاب،</li>
+<li>وستسمح الطبقة [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>] بحساب المؤشرات على درجات طالب معين،</li>
+<li>وستكون الطبقة [<bdi dir="ltr" class="odt-ltr-term">présentation</bdi>] عبارة عن تطبيق وحدة تحكم يعرض النتائج التي تحسبها الطبقة [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>].</li>
+</ul>
+<p>مشروع <bdi dir="ltr" class="odt-ltr-term">Visual Studio</bdi> الخاص بالتطبيق هو كما يلي:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000000B600000080FC6A7E5F.png" width="127" height="90" style="display:inline-block; margin:4px;width:3.371cm;height:2.371cm;" class="odt-zoomable" data-zoom-src="images/10000000000000B600000080FC6A7E5F.png" /></td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;">&nbsp;</td></tr></table>
+
+<p><span id="refheading408981886864318" name="refheading408981886864318" class="odt-bookmark-anchor"></span></p>
+<h2 id="72">7.2. <span style="color: #4f81bd"><strong>كيانات التطبيق</strong></span></h2>
+<p>الكيانات هي كائنات. سيكون لدينا هنا أربع فئات لكل من الكيانات <bdi dir="ltr" class="odt-ltr-term">Eleve</bdi>، <bdi dir="ltr" class="odt-ltr-term">Classe</bdi>، <bdi dir="ltr" class="odt-ltr-term">Matiere</bdi>، <em><bdi dir="ltr" class="odt-ltr-term">Note</bdi></em>.</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000010F000000C28EB4D827.png" width="136" height="97" style="display:inline-block; margin:4px;width:3.586cm;height:2.566cm;" class="odt-zoomable" data-zoom-src="images/100000000000010F000000C28EB4D827.png" /></td></tr></table>
+
+<p>يضم الملف [<bdi dir="ltr" class="odt-ltr-term">entites.py</bdi>] أربع فصول.</p>
+<p>تمثل الفئة [<bdi dir="ltr" class="odt-ltr-term">Classe</bdi>] فئة في المرحلة الإعدادية:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span> Classe<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # المنشئ</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __init__<span style="color:#008080">(</span>self<span style="color:#008080">,</span>id<span style="color:#008080">,</span>nom<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # يتم تخزين المعلمات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>id<span style="color:#008080">=</span>id</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>nom<span style="color:#008080">=</span>nom</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # toString</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __str__<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> <span style="color:#a31515">&quot;Classe[{0},{1}]&quot;</span><span style="color:#0000ff">.</span>format<span style="color:#008080">(</span>self<span style="color:#0000ff">.</span>id<span style="color:#008080">,</span>self<span style="color:#0000ff">.</span>nom<span style="color:#008080">)</span></span></span>
+</code></pre></div>
+
+<ul>
+<li>الأسطر 3-6: يتم تعريف الفصل برقم <em>id</em> (السطر 5) ورقم <em>nom</em> (السطر 6)؛</li>
+<li>السطران 9-10: طريقة عرض الفصل.</li>
+</ul>
+<p>الفئة [<bdi dir="ltr" class="odt-ltr-term">Matiere</bdi>] هي كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span> Matiere<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # الشركة المصنعة</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __init__<span style="color:#008080">(</span>self<span style="color:#008080">,</span>id<span style="color:#008080">,</span>nom<span style="color:#008080">,</span>coefficient<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # يتم حفظ المعلمات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>id<span style="color:#008080">=</span>id</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>nom<span style="color:#008080">=</span>nom</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>coefficient<span style="color:#008080">=</span>coefficient</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # toString</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __str__<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> <span style="color:#a31515">&quot;Matiere[{0},{1},{2}]&quot;</span><span style="color:#0000ff">.</span>format<span style="color:#008080">(</span>self<span style="color:#0000ff">.</span>id<span style="color:#008080">,</span>self<span style="color:#0000ff">.</span>nom<span style="color:#008080">,</span>self<span style="color:#0000ff">.</span>coefficient<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+</code></pre></div>
+
+<ul>
+<li>السطران 3-7: تُعرَّف المادة برقمها (السطر 5)، واسمها (السطر 6)، ومعاملها (السطر 7)؛</li>
+<li>السطران 10-11: طريقة عرض المادة.</li>
+</ul>
+<p>الفئة [<bdi dir="ltr" class="odt-ltr-term">Eleve</bdi>] هي كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span> Eleve<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # المُصنِّع</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __init__<span style="color:#008080">(</span>self<span style="color:#008080">,</span>id<span style="color:#008080">,</span>nom<span style="color:#008080">,</span>prenom<span style="color:#008080">,</span>classe<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # يتم حفظ المعلمات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>id<span style="color:#008080">=</span>id</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>nom<span style="color:#008080">=</span>nom</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>prenom<span style="color:#008080">=</span>prenom</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>classe<span style="color:#008080">=</span>classe</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # toString</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __str__<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> <span style="color:#a31515">&quot;Eleve[{0},{1},{2},{3}]&quot;</span><span style="color:#0000ff">.</span>format<span style="color:#008080">(</span>self<span style="color:#0000ff">.</span>id<span style="color:#008080">,</span>self<span style="color:#0000ff">.</span>prenom<span style="color:#008080">,</span>self<span style="color:#0000ff">.</span>nom<span style="color:#008080">,</span>self<span style="color:#0000ff">.</span>classe<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+</code></pre></div>
+
+<ul>
+<li>الأسطر 3-8: يتم تحديد الطالب برقمه (السطر 5)، واسمه (السطر 6)، واسمه الأول (السطر 7)، وفصله (السطر 8). هذا المعامل الأخير هو مرجع إلى كائن [<bdi dir="ltr" class="odt-ltr-term">Classe</bdi>]؛</li>
+<li>السطران 11-12: طريقة عرض الطالب.</li>
+</ul>
+<p>الفئة [<bdi dir="ltr" class="odt-ltr-term">Note</bdi>] هي كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span> Note<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # المُصنِّع</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __init__<span style="color:#008080">(</span>self<span style="color:#008080">,</span>id<span style="color:#008080">,</span>valeur<span style="color:#008080">,</span>eleve<span style="color:#008080">,</span>matiere<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # يتم حفظ المعلمات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>id<span style="color:#008080">=</span>id</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>valeur<span style="color:#008080">=</span>valeur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>eleve<span style="color:#008080">=</span>eleve</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>matiere<span style="color:#008080">=</span>matiere</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # toString</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __str__<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> <span style="color:#a31515">&quot;Note[{0},{1},{2},{3}]&quot;</span><span style="color:#0000ff">.</span>format<span style="color:#008080">(</span>self<span style="color:#0000ff">.</span>id<span style="color:#008080">,</span>self<span style="color:#0000ff">.</span>valeur<span style="color:#008080">,</span>self<span style="color:#0000ff">.</span>eleve<span style="color:#008080">,</span>self<span style="color:#0000ff">.</span>matiere<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+</code></pre></div>
+
+<ul>
+<li>السطور 3-8: يتم تمييز الكائن [<bdi dir="ltr" class="odt-ltr-term">Note</bdi>] برقمه (السطر 5)، وقيمة الدرجة (السطر 6)، وإشارة إلى الطالب الحاصل على هذه الدرجة (السطر 7)، وإشارة إلى المادة التي تتعلق بها الدرجة (السطر 8)؛</li>
+<li>السطور 11-12: طريقة عرض الكائن [<bdi dir="ltr" class="odt-ltr-term">Note</bdi>].</li>
+</ul>
+<p><span id="refheading409001886864318" name="refheading409001886864318" class="odt-bookmark-anchor"></span></p>
+<h2 id="73-dao">7.3. <span style="color: #4f81bd"><strong>الطبقة [dao]</strong></span></h2>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/1000000000000591000001203279ADFA.png" width="680" height="137" style="display:inline-block; margin:4px;width:17.997cm;height:3.635cm;" class="odt-zoomable" data-zoom-src="images/1000000000000591000001203279ADFA.png" /></td></tr></table>
+
+<p>ستوفر الطبقة [dao] الواجهة التالية للطبقة [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>]:</p>
+<ul>
+<li><em><bdi dir="ltr" class="odt-ltr-term">getClasses</bdi></em> تعرض قائمة الفصول الدراسية في المدرسة الإعدادية؛</li>
+<li><em><bdi dir="ltr" class="odt-ltr-term">getMatieres</bdi></em> يعرض قائمة المواد الدراسية؛</li>
+<li><em><bdi dir="ltr" class="odt-ltr-term">getEleves</bdi></em> يعرض قائمة الطلاب؛</li>
+<li><em><bdi dir="ltr" class="odt-ltr-term">getNotes</bdi></em> تعرض قائمة الدرجات.</li>
+</ul>
+<p>لن تستخدم الطبقة [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>] سوى هذه الأساليب. ولا داعي لأن تعرف كيفية تنفيذها. وبالتالي، يمكن أن تأتي هذه البيانات من مصادر مختلفة (مخزنة بشكل ثابت، أو من قاعدة بيانات، أو من ملفات نصية، ...) دون أن يؤثر ذلك على الطبقة [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>]. وهذا ما يُعرف <strong>بالبرمجة عبر الواجهات</strong>.</p>
+<p>تقوم الفئة [<bdi dir="ltr" class="odt-ltr-term">Dao</bdi>] بتنفيذ هذه الواجهة بالطريقة التالية:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># -*- coding=utf-8 -*-</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># استيراد وحدة الكيانات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> entites <span style="color:#0000ff">import</span> <span style="color:#008080">*</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span> Dao<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # منشئ</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __init__<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # إنشاء مثيلات للفئات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        classe1<span style="color:#008080">=</span>Classe<span style="color:#008080">(</span>1<span style="color:#008080">,</span><span style="color:#a31515">&quot;classe1&quot;</span><span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        classe2<span style="color:#008080">=</span>Classe<span style="color:#008080">(</span>2<span style="color:#008080">,</span><span style="color:#a31515">&quot;classe2&quot;</span><span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>classes<span style="color:#008080">=[</span>classe1<span style="color:#008080">,</span>classe2<span style="color:#008080">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # المواد الدراسية</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        matiere1<span style="color:#008080">=</span>Matiere<span style="color:#008080">(</span>1<span style="color:#008080">,</span><span style="color:#a31515">&quot;matiere1&quot;</span><span style="color:#008080">,</span>1<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        matiere2<span style="color:#008080">=</span>Matiere<span style="color:#008080">(</span>2<span style="color:#008080">,</span><span style="color:#a31515">&quot;matiere2&quot;</span><span style="color:#008080">,</span>2<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>matieres<span style="color:#008080">=[</span>matiere1<span style="color:#008080">,</span>matiere2<span style="color:#008080">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # الطلاب</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        eleve11<span style="color:#008080">=</span>Eleve<span style="color:#008080">(</span>11<span style="color:#008080">,</span><span style="color:#a31515">&quot;nom1&quot;</span><span style="color:#008080">,</span><span style="color:#a31515">&quot;prenom1&quot;</span><span style="color:#008080">,</span>classe1<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        eleve21<span style="color:#008080">=</span>Eleve<span style="color:#008080">(</span>21<span style="color:#008080">,</span><span style="color:#a31515">&quot;nom2&quot;</span><span style="color:#008080">,</span><span style="color:#a31515">&quot;prenom2&quot;</span><span style="color:#008080">,</span>classe1<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        eleve32<span style="color:#008080">=</span>Eleve<span style="color:#008080">(</span>32<span style="color:#008080">,</span><span style="color:#a31515">&quot;nom3&quot;</span><span style="color:#008080">,</span><span style="color:#a31515">&quot;prenom3&quot;</span><span style="color:#008080">,</span>classe2<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        eleve42<span style="color:#008080">=</span>Eleve<span style="color:#008080">(</span>42<span style="color:#008080">,</span><span style="color:#a31515">&quot;nom4&quot;</span><span style="color:#008080">,</span><span style="color:#a31515">&quot;prenom4&quot;</span><span style="color:#008080">,</span>classe2<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>eleves<span style="color:#008080">=[</span>eleve11<span style="color:#008080">,</span>eleve21<span style="color:#008080">,</span>eleve32<span style="color:#008080">,</span>eleve42<span style="color:#008080">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # الدرجات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        note1<span style="color:#008080">=</span>Note<span style="color:#008080">(</span>1<span style="color:#008080">,</span>10<span style="color:#008080">,</span>eleve11<span style="color:#008080">,</span>matiere1<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        note2<span style="color:#008080">=</span>Note<span style="color:#008080">(</span>2<span style="color:#008080">,</span>12<span style="color:#008080">,</span>eleve21<span style="color:#008080">,</span>matiere1<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        note3<span style="color:#008080">=</span>Note<span style="color:#008080">(</span>3<span style="color:#008080">,</span>14<span style="color:#008080">,</span>eleve32<span style="color:#008080">,</span>matiere1<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        note4<span style="color:#008080">=</span>Note<span style="color:#008080">(</span>4<span style="color:#008080">,</span>16<span style="color:#008080">,</span>eleve42<span style="color:#008080">,</span>matiere1<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        note5<span style="color:#008080">=</span>Note<span style="color:#008080">(</span>5<span style="color:#008080">,</span>6<span style="color:#008080">,</span>eleve11<span style="color:#008080">,</span>matiere2<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        note6<span style="color:#008080">=</span>Note<span style="color:#008080">(</span>6<span style="color:#008080">,</span>8<span style="color:#008080">,</span>eleve21<span style="color:#008080">,</span>matiere2<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        note7<span style="color:#008080">=</span>Note<span style="color:#008080">(</span>7<span style="color:#008080">,</span>10<span style="color:#008080">,</span>eleve32<span style="color:#008080">,</span>matiere2<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        note8<span style="color:#008080">=</span>Note<span style="color:#008080">(</span>8<span style="color:#008080">,</span>12<span style="color:#008080">,</span>eleve42<span style="color:#008080">,</span>matiere2<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>notes<span style="color:#008080">=[</span>note1<span style="color:#008080">,</span>note2<span style="color:#008080">,</span>note3<span style="color:#008080">,</span>note4<span style="color:#008080">,</span>note5<span style="color:#008080">,</span>note6<span style="color:#008080">,</span>note7<span style="color:#008080">,</span>note8<span style="color:#008080">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">#-----------</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # واجهة</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">#-----------</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # قائمة الفصول</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> getClasses<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> self<span style="color:#0000ff">.</span>classes</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # قائمة المواد</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> getMatieres<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> self<span style="color:#0000ff">.</span>matieres</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # قائمة الطلاب</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> getEleves<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> self<span style="color:#0000ff">.</span>eleves</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # قائمة الدرجات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> getNotes<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> self<span style="color:#0000ff">.</span>notes</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+</code></pre></div>
+
+<ul>
+<li>السطر 4: يتم استيراد الوحدة النمطية التي تحتوي على الكيانات التي تتعامل معها الطبقة [dao]؛</li>
+<li>السطر 8: لا تحتوي الدالة المنشئة على معلمات. وهي تنشئ أربع قوائم ثابتة:<ul>
+<li>الأسطر 10-12: قائمة الفئات؛</li>
+<li>الأسطر 14-16: قائمة المواد الدراسية؛</li>
+<li>الأسطر 18-22: قائمة الطلاب؛</li>
+<li>الأسطر 24-32: قائمة الدرجات.</li>
+</ul>
+</li>
+<li>الأسطر 39-52: تقتصر الطرق الأربع لواجهة الطبقة [dao] على إرجاع مرجع إلى القوائم الأربع التي أنشأها المنشئ.</li>
+</ul>
+<p>قد يكون برنامج الاختبار كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># -*- coding=utf-8 -*-</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># استيراد وحدة الكيانات والطبقة [dao]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> entites <span style="color:#0000ff">import</span> <span style="color:#008080">*</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> dao <span style="color:#0000ff">import</span> <span style="color:#008080">*</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># إنشاء مثيل لطبقة [dao]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">dao<span style="color:#008080">=</span>Dao<span style="color:#008080">()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># قائمة بالفئات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">for</span> classe <span style="color:#0000ff">in</span> dao<span style="color:#0000ff">.</span>getClasses<span style="color:#008080">():</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">print</span> classe</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># قائمة الفئات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">for</span> matiere <span style="color:#0000ff">in</span> dao<span style="color:#0000ff">.</span>getMatieres<span style="color:#008080">():</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">print</span> matiere</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># قائمة الفئات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">for</span> eleve <span style="color:#0000ff">in</span> dao<span style="color:#0000ff">.</span>getEleves<span style="color:#008080">():</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">print</span> eleve</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># قائمة الفئات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">for</span> note <span style="color:#0000ff">in</span> dao<span style="color:#0000ff">.</span>getNotes<span style="color:#008080">():</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">print</span> note</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+</code></pre></div>
+
+<p>التعليقات واضحة بذاتها. تستخدم الأسطر 11-24 واجهة الطبقة [dao]. ولا توجد هنا أي افتراضات بشأن التنفيذ الفعلي للطبقة. في السطر 8، يتم إنشاء مثيل للطبقة [dao]. هنا نضع افتراضات: اسم الفئة ونوع المنشئ. توجد حلول تسمح بتجنب هذه التبعية.</p>
+<p>نتائج تنفيذ هذا البرنامج النصي هي كما يلي:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>Classe[1,classe1]
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>Classe[2,classe2]
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>Matiere[1,matiere1,1]
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>Matiere[2,matiere2,2]
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>Eleve[11,prenom1,nom1,Classe[1,classe1]]
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>Eleve[21,prenom2,nom2,Classe[1,classe1]]
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>Eleve[32,prenom3,nom3,Classe[2,classe2]]
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>Eleve[42,prenom4,nom4,Classe[2,classe2]]
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>Note[1,10,Eleve[11,prenom1,nom1,Classe[1,classe1]],Matiere[1,matiere1,1]]
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>Note[2,12,Eleve[21,prenom2,nom2,Classe[1,classe1]],Matiere[1,matiere1,1]]
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>Note[3,14,Eleve[32,prenom3,nom3,Classe[2,classe2]],Matiere[1,matiere1,1]]
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>Note[4,16,Eleve[42,prenom4,nom4,Classe[2,classe2]],Matiere[1,matiere1,1]]
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>Note[5,6,Eleve[11,prenom1,nom1,Classe[1,classe1]],Matiere[2,matiere2,2]]
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>Note[6,8,Eleve[21,prenom2,nom2,Classe[1,classe1]],Matiere[2,matiere2,2]]
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>Note[7,10,Eleve[32,prenom3,nom3,Classe[2,classe2]],Matiere[2,matiere2,2]]
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>Note[8,12,Eleve[42,prenom4,nom4,Classe[2,classe2]],Matiere[2,matiere2,2]]
+</code></pre></div></td></tr></table></div>
+<p><span id="refheading409021886864318" name="refheading409021886864318" class="odt-bookmark-anchor"></span></p>
+<h2 id="74-metier">7.4. <span style="color: #4f81bd">الطبقة [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>]</span></h2>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000005A200000117ADD7AFF9.png" width="680" height="132" style="display:inline-block; margin:4px;width:17.997cm;height:3.482cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A200000117ADD7AFF9.png" /></td></tr></table>
+
+<p>الطبقة [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>] تُنفذ الواجهة التالية:</p>
+<ul>
+<li><em><bdi dir="ltr" class="odt-ltr-term">getClasses</bdi></em> تعرض قائمة الفصول الدراسية في المدرسة الإعدادية؛</li>
+<li><em><bdi dir="ltr" class="odt-ltr-term">getMatieres</bdi></em> تعرض قائمة المواد الدراسية؛</li>
+<li><em><bdi dir="ltr" class="odt-ltr-term">getEleves</bdi></em> تعرض قائمة الطلاب؛</li>
+<li><em><bdi dir="ltr" class="odt-ltr-term">getNotes</bdi></em> تعرض قائمة الدرجات؛</li>
+<li><em><bdi dir="ltr" class="odt-ltr-term">getStatsForEleve</bdi></em> يعرض درجات الطالب رقم <em><bdi dir="ltr" class="odt-ltr-term">idEleve</bdi></em> بالإضافة إلى معلومات عنها: <em>المعدل المرجح</em>، <em>وأدنى درجة</em>، <em>وأعلى درجة</em>. </li>
+</ul>
+<p>لن تستخدم الطبقة [<bdi dir="ltr" class="odt-ltr-term">présentation</bdi>] سوى هذه الطرق. ولا داعي لأن تعرف كيفية تنفيذها.</p>
+<p>تُرجع الطريقة <em><bdi dir="ltr" class="odt-ltr-term">getStatsForEleve</bdi></em> كائنًا من النوع [<bdi dir="ltr" class="odt-ltr-term">StatsForEleve</bdi>] على النحو التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span> StatsForEleve<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # الشركة المصنعة</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __init__<span style="color:#008080">(</span>self<span style="color:#008080">,</span> eleve<span style="color:#008080">,</span> notes<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # يتم حفظ الإعدادات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>eleve<span style="color:#008080">=</span>eleve</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>notes<span style="color:#008080">=</span>notes</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # يتم إيقاف التشغيل في حالة عدم وجود ملاحظات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> len<span style="color:#008080">(</span>notes<span style="color:#008080">)==</span>0<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">return</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # معالجة الدرجات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        sommePonderee<span style="color:#008080">=</span>0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        sommeCoeff<span style="color:#008080">=</span>0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>max<span style="color:#008080">=-</span>1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>min<span style="color:#008080">=</span>21</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">for</span> note <span style="color:#0000ff">in</span> notes<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            valeur<span style="color:#008080">=</span>note<span style="color:#0000ff">.</span>valeur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            coeff<span style="color:#008080">=</span>note<span style="color:#0000ff">.</span>matiere<span style="color:#0000ff">.</span>coefficient</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            sommeCoeff<span style="color:#008080">+=</span>coeff</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            sommePonderee<span style="color:#008080">+=</span>valeur<span style="color:#008080">*</span>coeff</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">if</span> valeur<span style="color:#008080">&lt;</span>self<span style="color:#0000ff">.</span>min<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                self<span style="color:#0000ff">.</span>min<span style="color:#008080">=</span>valeur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">if</span> valeur<span style="color:#008080">&gt;</span>self<span style="color:#0000ff">.</span>max<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                self<span style="color:#0000ff">.</span>max<span style="color:#008080">=</span>valeur</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # حساب متوسط درجات الطالب</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>moyennePonderee<span style="color:#008080">=</span>float<span style="color:#008080">(</span>sommePonderee<span style="color:#008080">)/</span>sommeCoeff</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # toString</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __str__<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # حالة الطالب الذي ليس لديه درجات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> len<span style="color:#008080">(</span>self<span style="color:#0000ff">.</span>notes<span style="color:#008080">)==</span>0<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">return</span> <span style="color:#a31515">&quot;Eleve={0}, notes=[]&quot;</span><span style="color:#0000ff">.</span>format<span style="color:#008080">(</span>self<span style="color:#0000ff">.</span>eleve<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # حالة الطالب الذي لديه درجات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        str<span style="color:#008080">=</span><span style="color:#a31515">&quot;&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">for</span> note <span style="color:#0000ff">in</span> self<span style="color:#0000ff">.</span>notes<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            str<span style="color:#008080">+=</span><span style="color:#a31515">&quot;{0} &quot;</span><span style="color:#0000ff">.</span>format<span style="color:#008080">(</span>note<span style="color:#0000ff">.</span>valeur<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> <span style="color:#a31515">&quot;Eleve={0}, notes=[{1}], max={2}, min={3}, moyenne={4}&quot;</span><span style="color:#0000ff">.</span>format<span style="color:#008080">(</span>self<span style="color:#0000ff">.</span>eleve<span style="color:#008080">,</span> str<span style="color:#008080">,</span> self<span style="color:#0000ff">.</span>max<span style="color:#008080">,</span> self<span style="color:#0000ff">.</span>min<span style="color:#008080">,</span> self<span style="color:#0000ff">.</span>moyennePonderee<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+</code></pre></div>
+
+<ul>
+<li>السطر 3: يتلقى المنشئ معلمتين: <ul>
+<li>مرجع إلى الطالب من النوع [<bdi dir="ltr" class="odt-ltr-term">Eleve</bdi>] الذي يتم حساب المؤشرات الخاصة به؛</li>
+<li>مرجع إلى درجاته، وهي قائمة من الكائنات من النوع [<bdi dir="ltr" class="odt-ltr-term">Note</bdi>].</li>
+</ul>
+</li>
+<li>السطران 8-9: إذا كانت قائمة الدرجات فارغة، فلا يتم المضي قدمًا.</li>
+<li>وإلا، في الأسطر 11-25، يتم حساب المؤشرات التالية:<ul>
+<li><em><bdi dir="ltr" class="odt-ltr-term">self.moyennePonderee</bdi></em>: متوسط درجات الطالب المرجح بمعاملات المواد؛</li>
+<li><em><bdi dir="ltr" class="odt-ltr-term">self.min</bdi></em>: أدنى درجة حصل عليها الطالب؛</li>
+<li><em><bdi dir="ltr" class="odt-ltr-term">self.max</bdi></em>: أعلى درجة حصل عليها.</li>
+</ul>
+</li>
+<li>السطر 28: طريقة عرض الفصل بالصيغة الموضحة في السطر 36.</li>
+</ul>
+<p>قد يكون نص البرنامج النصي لاختبار هذه الفئة كما يلي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># -*- coding=utf-8 -*-</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># استيراد وحدات الكيانات، والطبقة [dao] والطبقة [metier]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> entites <span style="color:#0000ff">import</span> <span style="color:#008080">*</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> dao <span style="color:#0000ff">import</span> <span style="color:#008080">*</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> metier <span style="color:#0000ff">import</span> <span style="color:#008080">*</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># فصل دراسي</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">classe1<span style="color:#008080">=</span>Classe<span style="color:#008080">(</span>1<span style="color:#008080">,</span><span style="color:#a31515">&quot;6e A&quot;</span><span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># طالب في هذه الفصل</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">paul_durand<span style="color:#008080">=</span>Eleve<span style="color:#008080">(</span>1<span style="color:#008080">,</span><span style="color:#a31515">&quot;durand&quot;</span><span style="color:#008080">,</span><span style="color:#a31515">&quot;paul&quot;</span><span style="color:#008080">,</span>classe1<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ثلاث مواد دراسية</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">maths<span style="color:#008080">=</span>Matiere<span style="color:#008080">(</span>1<span style="color:#008080">,</span><span style="color:#a31515">&quot;maths&quot;</span><span style="color:#008080">,</span>1<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">francais<span style="color:#008080">=</span>Matiere<span style="color:#008080">(</span>2<span style="color:#008080">,</span><span style="color:#a31515">&quot;francais&quot;</span><span style="color:#008080">,</span>2<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">anglais<span style="color:#008080">=</span>Matiere<span style="color:#008080">(</span>3<span style="color:#008080">,</span><span style="color:#a31515">&quot;anglais&quot;</span><span style="color:#008080">,</span>3<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># الدرجات التي حصل عليها الطالب في هذه المواد</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">note_maths<span style="color:#008080">=</span>Note<span style="color:#008080">(</span>1<span style="color:#008080">,</span>10<span style="color:#008080">,</span>paul_durand<span style="color:#008080">,</span>maths<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">note_francais<span style="color:#008080">=</span>Note<span style="color:#008080">(</span>2<span style="color:#008080">,</span>12<span style="color:#008080">,</span>paul_durand<span style="color:#008080">,</span>francais<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">note_anglais<span style="color:#008080">=</span>Note<span style="color:#008080">(</span>3<span style="color:#008080">,</span>14<span style="color:#008080">,</span>paul_durand<span style="color:#008080">,</span>anglais<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># يتم عرض المؤشرات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">print</span> StatsForEleve<span style="color:#008080">(</span>paul_durand<span style="color:#008080">,[</span>note_maths<span style="color:#008080">,</span> note_francais<span style="color:#008080">,</span>note_anglais<span style="color:#008080">])</span></span></span>
+</code></pre></div>
+
+<p>نتائج العرض على الشاشة هي كما يلي:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Eleve=Eleve[1,paul,durand,Classe[1,6e A]], notes=[10 12 14 ], max=14, min=10, moyenne=12.6666666667
+</code></pre></div>
+<p>لنعد إلى بنية الطبقات لدينا:</p>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/10000000000005A1000000FBFAA8B3C8.png" width="680" height="118" style="display:inline-block; margin:4px;width:17.997cm;height:3.134cm;" class="odt-zoomable" data-zoom-src="images/10000000000005A1000000FBFAA8B3C8.png" /></td></tr></table>
+
+<p>تقوم الفئة [<bdi dir="ltr" class="odt-ltr-term">Metier</bdi>] بتنفيذ الطبقة [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>] بالطريقة التالية:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span> Metier<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # المُنشئ</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> __init__<span style="color:#008080">(</span>self<span style="color:#008080">,</span>dao<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # يتم تخزين المرجع في الطبقة [dao]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        self<span style="color:#0000ff">.</span>dao<span style="color:#008080">=</span>dao</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">#-----------</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # الواجهة</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">#-----------</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # المؤشرات على الملاحظات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> getStatsForEleve<span style="color:#008080">(</span>self<span style="color:#008080">,</span>idEleve<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # إحصائيات الطالب رقم idEleve</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # البحث عن الطالب</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        trouve<span style="color:#008080">=</span>False</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        i<span style="color:#008080">=</span>0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        eleves<span style="color:#008080">=</span>self<span style="color:#0000ff">.</span>getEleves<span style="color:#008080">()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">while</span> <span style="color:#0000ff">not</span> trouve <span style="color:#0000ff">and</span> i<span style="color:#008080">&lt;</span>len<span style="color:#008080">(</span>eleves<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            trouve<span style="color:#008080">=</span>eleves<span style="color:#008080">[</span>i<span style="color:#008080">]</span><span style="color:#0000ff">.</span>id<span style="color:#008080">==</span>idEleve</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            i<span style="color:#008080">+=</span>1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # هل تم العثور عليه؟</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> <span style="color:#0000ff">not</span> trouve<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">raise</span> RuntimeError<span style="color:#008080">(</span><span style="color:#a31515">&quot;L&#x27;eleve [{0}] n&#x27;existe pas&quot;</span><span style="color:#0000ff">.</span>format<span style="color:#008080">(</span>idEleve<span style="color:#008080">))</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">else</span><span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            eleve<span style="color:#008080">=</span>eleves<span style="color:#008080">[</span>i<span style="color:#008080">-</span>1<span style="color:#008080">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # قائمة بجميع الدرجات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        notes<span style="color:#008080">=[]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">for</span> note <span style="color:#0000ff">in</span> self<span style="color:#0000ff">.</span>getNotes<span style="color:#008080">():</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            # إضافة جميع درجات الطالب إلى «الدرجات»</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">if</span> note<span style="color:#0000ff">.</span>eleve<span style="color:#0000ff">.</span>id<span style="color:#008080">==</span>idEleve<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                notes<span style="color:#0000ff">.</span>append<span style="color:#008080">(</span>note<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # عرض النتيجة</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> StatsForEleve<span style="color:#008080">(</span>eleve<span style="color:#008080">,</span>notes<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # قائمة الفصول</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> getClasses<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> self<span style="color:#0000ff">.</span>dao<span style="color:#0000ff">.</span>getClasses<span style="color:#008080">()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # قائمة المواد</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> getMatieres<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> self<span style="color:#0000ff">.</span>dao<span style="color:#0000ff">.</span>getMatieres<span style="color:#008080">()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # قائمة الطلاب</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> getEleves<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> self<span style="color:#0000ff">.</span>dao<span style="color:#0000ff">.</span>getEleves<span style="color:#008080">()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # قائمة الدرجات</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> getNotes<span style="color:#008080">(</span>self<span style="color:#008080">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> self<span style="color:#0000ff">.</span>dao<span style="color:#0000ff">.</span>getNotes<span style="color:#008080">()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+</code></pre></div>
+
+<ul>
+<li>الأسطر 3-5: يتلقى المنشئ مرجعًا إلى الطبقة [dao]. يجب أن تحتوي الطبقة [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>] على هذه الإشارة. وهنا، يتم تزويدها بها عبر منشئها. ويمكن تصور حلول أخرى. في بنية الطبقات الممثلة أفقيًا، يجب أن تحتوي كل طبقة على إشارة إلى الطبقة الموجودة على يمينها؛</li>
+<li>الأسطر 36-49: الطرق <em><bdi dir="ltr" class="odt-ltr-term">getClasses</bdi></em> و <bdi dir="ltr" class="odt-ltr-term">getMatieres</bdi>، <em><bdi dir="ltr" class="odt-ltr-term">getEleves</bdi></em>، <em><bdi dir="ltr" class="odt-ltr-term">getNotes</bdi></em> تكتفي بتفويض الاستدعاء إلى الطرق التي تحمل نفس الأسماء في الطبقة [dao]؛</li>
+<li>السطر 12: تتلقى الدالة <em><bdi dir="ltr" class="odt-ltr-term">getStatsForEleve</bdi></em> كمعلمة رقم الطالب الذي يجب عرض مؤشراته.</li>
+<li>السطر 17: سيتم البحث عن الطالب في قائمة جميع الطلاب؛</li>
+<li>الأسطر 18-20: حلقة البحث؛</li>
+<li>السطر 23: إذا لم يتم العثور على الطالب، يتم إثارة استثناء؛</li>
+<li>وإلا، في السطر 25، يتم تخزين الطالب الذي تم العثور عليه؛</li>
+<li>الأسطر 28-31: يتم البحث بين جميع درجات المدرسة الإعدادية عن تلك التي تخص الطالب المخزّن؛</li>
+<li>وعند العثور عليها، يمكن إنشاء الكائن <em><bdi dir="ltr" class="odt-ltr-term">StatsForEleve</bdi></em> المطلوب.</li>
+</ul>
+<p><span id="refheading409041886864318" name="refheading409041886864318" class="odt-bookmark-anchor"></span></p>
+<h2 id="75-console">7.5. <span style="color: #4f81bd">الطبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>]</span></h2>
+<table dir="rtl" class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td dir="rtl" style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: right;"><img src="images/100000000000059F000000FC9E7B0F1A.png" width="680" height="119" style="display:inline-block; margin:4px;width:17.997cm;height:3.15cm;" class="odt-zoomable" data-zoom-src="images/100000000000059F000000FC9E7B0F1A.png" /></td></tr></table>
+
+<p>يتم تنفيذ الطبقة [<bdi dir="ltr" class="odt-ltr-term">console</bdi>] بواسطة البرنامج النصي التالي:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># -*- coding=utf-8 -*-</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># استيراد وحدة الكيانات، ووحدة [dao]، ووحدة [metier]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> entites <span style="color:#0000ff">import</span> <span style="color:#008080">*</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> dao <span style="color:#0000ff">import</span> <span style="color:#008080">*</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> metier <span style="color:#0000ff">import</span> <span style="color:#008080">*</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ----------- الطبقة [console]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># إنشاء مثيل الطبقة [metier]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">metier<span style="color:#008080">=</span>Metier<span style="color:#008080">(</span>Dao<span style="color:#008080">())</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># طلب / استجابة</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">fini<span style="color:#008080">=</span>False</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">while</span> <span style="color:#0000ff">not</span> fini<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # السؤال</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">print</span> <span style="color:#a31515">&quot;numero de l&#x27;eleve (&gt;=1 et * pour arreter) : &quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # إجابة</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    reponse<span style="color:#008080">=</span>raw_input<span style="color:#008080">()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # انتهى؟</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> reponse<span style="color:#0000ff">.</span>strip<span style="color:#008080">()==</span><span style="color:#a31515">&quot;*&quot;</span><span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">break</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # هل الإدخال صحيح؟</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    ok<span style="color:#008080">=</span>False</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">try</span><span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        idEleve<span style="color:#008080">=</span>int<span style="color:#008080">(</span>reponse<span style="color:#008080">,</span>10<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        ok<span style="color:#008080">=</span>idEleve<span style="color:#008080">&gt;=</span>1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">except</span><span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">pass</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # هل البيانات صحيحة؟</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">if</span> <span style="color:#0000ff">not</span> ok<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">print</span> <span style="color:#a31515">&quot;Saisie incorrecte. Recommencez...&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">continue</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # الحساب</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">try</span><span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">print</span> metier<span style="color:#0000ff">.</span>getStatsForEleve<span style="color:#008080">(</span>idEleve<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">except</span> RuntimeError<span style="color:#008080">,</span>erreur<span style="color:#008080">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">print</span> <span style="color:#a31515">&quot;L&#x27;erreur suivante s&#x27;est produite : {0}&quot;</span><span style="color:#0000ff">.</span>format<span style="color:#008080">(</span>erreur<span style="color:#008080">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+</code></pre></div>
+
+<ul>
+<li>السطر 10: إنشاء مثيل لكل من الطبقتين [dao] و [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>]. هذه هي التبعية الوحيدة لرمزنا فيما يتعلق بتنفيذ هاتين الطبقتين؛</li>
+<li>السطر 34: يتم استخدام واجهة الطبقة [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>]؛</li>
+<li>السطر 19: تقوم الطريقة <em><bdi dir="ltr" class="odt-ltr-term">strip</bdi></em> بإزالة المسافات في بداية ونهاية السلسلة؛</li>
+<li>السطر 20: تتيح <em><bdi dir="ltr" class="odt-ltr-term">break</bdi></em> الخروج من حلقة؛</li>
+<li>السطر 24: يتم محاولة تحويل السلسلة المدخلة إلى عدد صحيح عشري؛</li>
+<li>السطر 29: تكون قيمة <em>ok</em> صحيحة فقط إذا تم المرور بالسطر 25؛</li>
+<li>السطر 31: <em><bdi dir="ltr" class="odt-ltr-term">continue</bdi></em> يسمح بالعودة إلى منتصف الحلقة؛</li>
+<li>السطر 34: حساب المؤشرات؛</li>
+<li>السطر 35: يتم اعتراض الاستثناء <em><bdi dir="ltr" class="odt-ltr-term">RuntimeError</bdi></em> الذي قد ينشأ من الطبقة [<bdi dir="ltr" class="odt-ltr-term">métier</bdi>].</li>
+</ul>
+<p>فيما يلي مثال على التنفيذ:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>numero de l&#39;eleve (&gt;=1 et * pour arreter) :
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>xx
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>Saisie incorrecte. Recommencez...
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>numero de l&#39;eleve (&gt;=1 et * pour arreter) :
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>-4
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>Saisie incorrecte. Recommencez...
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>numero de l&#39;eleve (&gt;=1 et * pour arreter) :
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>11
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>Eleve=Eleve[11,prenom1,nom1,Classe[1,classe1]], notes=[10 6 ], max=10, min=6, mo
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>yenne=7.33333333333
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>numero de l&#39;eleve (&gt;=1 et * pour arreter) :
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>111
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>L&#39;erreur suivante s&#39;est produite : L&#39;eleve [111] n&#39;existe pas
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>numero de l&#39;eleve (&gt;=1 et * pour arreter) :
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>*
+</code></pre></div></td></tr></table></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        هذا البرنامج التعليمي الذي كتبه <strong>Serge Tahé</strong> متاح للجمهور وفقًا لشروط
+<em>Creative Commons Attribution – Non-commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
